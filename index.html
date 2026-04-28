@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leitstelle</title>
+<style>
+body { background:#0b0f1a; color:white; font-family:Arial; text-align:center; }
+input, button { padding:10px; margin:5px; border-radius:8px; border:none; }
+button { background:#4CAF50; color:white; }
+</style>
+</head>
+
+<body>
+
+<h1>📡 Leitstelle Lukas</h1>
+
+<input id="email" placeholder="Email"><br>
+<input id="pass" type="password" placeholder="Passwort"><br>
+
+<button onclick="register()">Registrieren</button>
+<button onclick="login()">Login</button>
+
+<div id="app" style="display:none;">
+  <h2>✅ Eingeloggt</h2>
+  <p>Dashboard bereit</p>
+</div>
+
+<script>
+function register(){
+  localStorage.setItem("user", email.value);
+  localStorage.setItem("pass", pass.value);
+  alert("Gespeichert!");
+}
+
+function login(){
+  const u = localStorage.getItem("user");
+  const p = localStorage.getItem("pass");
+
+  if(email.value === u && pass.value === p){
+    app.style.display = "block";
+  } else {
+    alert("Falsch!");
+  }
+}
+</script>
+
+</body>
+</html>
